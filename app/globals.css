@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+  background: #2451c4;
+  color: #f3f4f1;
+}
+
+.grid-field {
+  background-image: radial-gradient(#c7c9c2 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.reveal {
+  filter: blur(6px);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: filter 0.9s ease, opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.is-visible {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    filter: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.stat-underline {
+  text-decoration: underline;
+  text-decoration-color: #2451c4;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
